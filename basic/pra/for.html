@@ -11,8 +11,16 @@
 </body>
 <script>
     for (var i = 1; i<=10; i++)
+        console.log(i + '번째 반복입니다.');
+    console.log('i의 현재 값은?' + i);
+
+    for (var i = 1; i<10; i++)
     {
-        console.log(i+'번째 반복입니다.');
+        console.log(i+'번째 반복중입니다.')
+        if(i==5){
+            console.warn('조건에 도달했으므로 반복문을 종료합니다.')
+            break;
+        }
     }
 </script>
 </html>
