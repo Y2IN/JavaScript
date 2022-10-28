@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var a = 10;
+    var b = 5;
+    var c = 3;
+    var d = '10';
+
+    console.log(a+b); //15
+    console.log(a-b); //5
+    console.log(a/b); //2
+    console.log(a*b); //50
+
+    //++는 1을 더해라
+    //--는 1을 빼라
+
+    console.log(a++); //10
+    //10이었던 a가 출력이 된 다음 더해짐
+    console.log(a) //11
+    console.log(a--);
+
+    //비교연산자
+    console.log(a==10);
+    //true 
+    console.log(a==3);
+    //false 
+
+    console.log(a == d); //true
+    //'=='은 자료형까지 비교하지 않고, 값만 비교하기 떄문에 true
+    console.log(a === d); //false
+    //'==='은 자료형까지 비교함
+    console.log(d ==='10'); //true
+    //문자 10과 문자 10 비교라 자료형도 같음
+
+    console.warn(a != 10); //false
+    console.warn(a != '10'); //false
+    console.warn(a !== '10'); //true
+    //숫자10과 문자10기 때문에 거짓의 부정인 트루
+
+    /*
+    switch("확인할 변수값"){
+        case '변수값과 비교할 값':
+            실행시킬 내용
+            break;
+        case '변수값과 비교할 값':
+            실행시킬 내용
+            break;
+        case '변수값과 비교할 값':
+            실행시킬 내용
+            break;
+        }
+    */
+    var phone = '갤럭시';
+    switch(phone){
+        case '아이폰':
+            console.log('아이폰');
+            break;
+        case '갤럭시':
+            console.log('갤럭시');
+            break;
+        case '아이폰':
+            console.log('아이패드');
+            break;
+        case '아이폰':
+            console.log('Z플립');
+            break;
+        default :
+            console.log('모두가 아님');
+            break;
+    }
+</script>
+</html>
