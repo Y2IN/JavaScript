@@ -13,24 +13,44 @@
     // 1번
     // 아래 수식의 결과가 어떻게 나오는지?
 
-    // 5 + '5' = ?
-    // (5 * ( 5 +'5')) = ?
-    // (5 * '5' + 5) = ?
-
+    // 5 + '5' = 55
+    // (5 * ( 5 +'5')) = 275
+    // (5 * '5' + 5) = 30
+    console.log(55);
+    console.log(5 * ( 5 +'5'));
+    console.log(5 * '5' + 5);
     // 2번 
     // 이중배열의 내용을 오름차순 정렬 후 foreach를 사용하여 전부 출력
 
     var arr = [[2,5,1,3,4],[6,9,7,10,8],[11,15,14,12,13]];
 
+    arr.forEach(function(item,index,array){
+        item.sort(function(left,right){
+            return (left - right);
+        })
+        item.forEach(function(item1, index, array){
+            console.warn(item1)
+        })
+    })
+
     // 3번
     // 배열중 특정 내용을 찾아서 빼버리는 로직을 작성
     
     var fruit = ['딸기', '바나나', '사과', '망고', '샤인머스캣', '복숭아'];
+    
+    var  out = '바나나'
+
+    var index = fruit.indexOf(out);
+    fruit.splice(index,1);
+    console.log(fruit)
 
     // 4번
     // 아래 배열의 순서를 뒤집고 구분자 없이 콘솔에 출력
 
     var arr = ['t','p','i','r','c','s','a','v','a','j'];
+    arr.reverse();
+    res = arr.join('')
+    console.log(res);
 
     // 5번
     // 배열에 들어있는 4명의 성적 평균을 구해 다른 배열에 넣고 내림차순 출력
@@ -59,5 +79,17 @@
         kor : 78 
         }]
 
+        var arr = [];
+        for (i in grade){
+            with(grade[i]){
+                console.log(name + '의 평균 성적은 ' + ((eng+math+kor)/3) + '입니다.');
+                arr.push(((eng+math+kor)/3));
+            }
+        }
+
+        arr.sort(function(left,right){
+            return(right -left)
+        })
+        console.log(arr);
 </script>
 </html>

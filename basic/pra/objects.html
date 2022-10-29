@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    //객체는 현실세계 있는 무언가를 코드상으로 나타내는 방법
+    //배열 --> 비어있는 큰 상자에 작은 상자들을 넣어줄 수 있다.
+    // 인덱스라는 값을 이용해서 상자를 구분한다.
+
+    //객체 --> 비어있는 상자에 작은 상자(값)을 넣어줄 수 있다
+    //인덱스가 아닌 값과 따라다니는 키라는 특정한 값을 이용해서 상자들을 구분
+
+    var stock = {
+        name : 'apple',
+        price : 173.07,
+        products : ['iphone', 'ipad', 'airpods'],
+        from : '나스닥',
+        status : true
+    };
+    //주식에는 이름 주가 만드는 상품 어디에 상장되었는지와 상장상태
+
+    console.log(stock);
+
+    // 객체명['속성명(키값)']
+
+    console.log(stock['name']);
+    console.log(stock['price']);
+    console.log(stock['products'][0]); //객체안에 있는 값 가져오는 방법
+    console.log(stock['from']);
+    console.log(stock['status']);
+
+    //점 접근법
+    //객체명,속성명(키 값)
+    console.log(stock.name);
+    console.log(stock.price);
+    console.log(stock.products);
+    console.log(stock.products[0]);
+    console.log(stock.from);
+    console.log(stock.status);
+
+    for (item in stock){
+        console.log(item + '의 값은 ' + stock[item]);
+    }
+
+    //for in 반복문을 통해 객체 내부의 값들을 가져올 수 있다.
+    //배열 반복문과는 다르게 item 위치에 객체의 키값(속성명)이 들어옴
+    
+    //객체 안에 해당 속성명이 존재하는지 확인하는 키워드
+    console.log('name' in stock);//true
+    console.log('option' in stock);//false
+    //찾는 키값이 객체 안에 있을때는 true, 없으면 false
+
+    //with : 객체의 값을 가져올 때 객체명을 생략할 수 있다.
+    with(stock){
+        console.warn(name);
+        console.warn(price);
+        console.warn(products);
+    }
+    
+    var fruit = {};
+    //빈 객체 선언
+
+    fruit.name = 'mango';
+    fruit.price = 3000;
+    fruit.from = 'jeju';
+    console.log(fruit);
+
+    fruit.price = 2500;
+    console.log(fruit);
+
+    delete(fruit.from); 
+    console.log(fruit);
+
+    //객체 배열
+    //배열안에 객체가 들어가있는 형태
+
+    var students = [];
+
+    var student1 = {
+        name : 'yein',
+        eng : 70,
+        math : 85,
+        kor : 70
+    }
+    
+    var student2 = {
+        name : 'yelim',
+        eng : 67,
+        math : 87,
+        kor : 88
+    }
+
+    var student3 = {
+        name : 'yeeun',
+        eng : 73,
+        math : 62,
+        kor : 57
+    }
+
+    var student4 = {
+        name : 'seon',
+        eng : 67,
+        math : 86,
+        kor : 73
+    }
+
+    var student5 = {
+        name : 'jiyoung',
+        eng : 90,
+        math : 93,
+        kor : 81
+    }
+
+    students.push(student1);
+    students.push(student2);
+    students.push(student3);
+    students.push(student4);
+    students.push(student5);
+
+    console.warn(students);
+
+    for (var i = 0; i < students.length; i++){
+        console.log("my name is " + students[i].name)
+    }
+
+    for (index in students){
+        for (item in students[index]){
+            console.log(students[index][item]);
+        }
+    }
+
+</script>
+</html>

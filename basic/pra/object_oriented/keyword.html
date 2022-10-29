@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    function Person(name){
+        this.name = name;
+        this.hello = function(){
+            console.log('안녕! 난 ' + this.name + '야!');
+        }
+    }
+
+    var student = new Person('철수');
+
+    var student2 = {
+        name : '영희',
+        hello : function(){
+            console.log('안녕! 난 ' + this.name + '야!');
+        }
+    }
+
+    student.hello();
+    student2.hello();
+
+    //instanceof 키워드
+    //해당 객체가 어느 함수를 통해 생성됐는지 확인이 가능함
+
+    console.log(student instanceof Person); //Person이라는 생성자 객체로 만들어짐 --> true
+    console.log(student2 instanceof Person); //객체 생성해서 만든 거라 false
+
+    var student3 = Person('기용');
+
+    console.log(student3);
+
+    student2.hello();
+</script>
+</html>
