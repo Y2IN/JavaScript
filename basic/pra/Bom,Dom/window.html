@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //window
+    //Dom(document object model)
+    //Bom(document object model)
+
+    console.log(window);
+    var a = '전역변수입니다!';
+
+    console.log(a);
+    console.log(window.a)
+
+    //window.open('','','') 
+    //window.open('https://www.naver.com','네이버','resizeable=no,width=1366,height=720'); -->
+
+    // window.open('팝업주소','팝업이름','팝업설정');
+    // https://www.w3schools.com/jsref/met_win_open.asp
+   
+    /* 
+    width: 팝업창 가로길이
+    height : 팝업창 세로길이
+    toolbar = no : 단축도구장(툴바) 표시안함
+    menubar = no : 메뉴창(메뉴바) 표시안함
+    location = no : 주소창 표시안함
+    scrollbars = no : 스크롤바 표시안함
+    status = no : 아래상태바창 표시안함
+    */
+  
+    // window.open() 을 사용하여 새로운 창을 열수도 있다.
+    // 반대로 window.close()를 사용하면 현재 보고있는 창이 닫힌다.
+
+    // setTimeout, setInterval
+    // setTimeout은 특정시간 이후에 작동시키는 코드
+    // setInterval은 특정시간 이후 반복을 시키는 코드
+
+    var test1 = window.setTimeout(function(){
+        console.log('2초 뒤에 실행됩니다.')
+    },2000)
+
+    var test2 = window.setInterval(function(){
+        console.warn('1초마다 반복됩니다')
+    },1000)
+
+    //실행이나 반복을 멈추어야할 때
+    // clearTimeout, clearInterval 두가지 명령어를 사용하여 멈출 수 있다.
+
+    var test3 = window.setTimeout(function(){
+        console.log('실행한지 5초가 지나 반복이 멈추었습니다.')
+        clearInterval(test2);
+    }, 5000)
+    //clearTimeout(test1); 
+    //clearInterval(test2);
+
+    // setTimeout과 setInterval을 선언해줄때 사용한 변수를 통해 작동을 멈출수 있다.
+    // 이 4가지를 사용하여 여러가지 작업에 사용이 가능.
+</script>
+</html>
